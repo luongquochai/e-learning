@@ -39,3 +39,7 @@
 | Bidirection & async | Client -> server request |
 | Stream support | Request/Response | 
 | API Oriented | CRUD Oriented (POST GET PUT DELETE) |
+
+
+References:
+- Well known types: https://protobuf.dev/reference/protobuf/google.protobuf/
