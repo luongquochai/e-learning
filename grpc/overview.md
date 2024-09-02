@@ -40,6 +40,8 @@
 | Stream support | Request/Response | 
 | API Oriented | CRUD Oriented (POST GET PUT DELETE) |
 
+# Note:
+- With Unary we can add option: --go-grpc_opt=require_unimplemented_servers=false when generate to avoid unimplemented
 
 References:
 - Well known types: https://protobuf.dev/reference/protobuf/google.protobuf/

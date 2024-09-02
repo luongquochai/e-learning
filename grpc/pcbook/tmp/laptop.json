@@ -1,62 +1,62 @@
 {
-  "id":  "31636a83-b082-4f6b-9beb-3075ea4422c8",
-  "brand":  "Apple",
-  "name":  "Macbook Air",
-  "cpu":  {
-    "brand":  "Intel",
-    "name":  "Xeon E-2286M",
-    "number_cores":  7,
-    "number_threads":  9,
-    "min_ghz":  3.450310407731871,
-    "max_ghz":  4.011020570486728
+  "id": "4a44de1f-766b-404d-a177-d5212186c281",
+  "brand": "Dell",
+  "name": "Alienware",
+  "cpu": {
+    "brand": "Intel",
+    "name": "Core i9-9980HK",
+    "number_cores": 7,
+    "number_threads": 11,
+    "min_ghz": 2.6349210656862736,
+    "max_ghz": 3.72910738131052
   },
-  "memory":  {
-    "value":  "18",
-    "unit":  "GIGABYTE"
+  "memory": {
+    "value": "45",
+    "unit": "GIGABYTE"
   },
-  "gpus":  [
+  "gpus": [
     {
-      "brand":  "AMD",
-      "name":  "RX 5700-XT",
-      "min_ghz":  1.4852245256737473,
-      "max_ghz":  1.5852544395288608,
-      "memory":  {
-        "value":  "5",
-        "unit":  "GIGABYTE"
+      "brand": "Nvidia",
+      "name": "GTX 1070",
+      "min_ghz": 1.233964598792738,
+      "max_ghz": 1.240002998772131,
+      "memory": {
+        "value": "2",
+        "unit": "GIGABYTE"
       }
     }
   ],
-  "storages":  [
+  "storages": [
     {
-      "driver":  "SSD",
-      "memory":  {
-        "value":  "727",
-        "unit":  "GIGABYTE"
+      "driver": "SSD",
+      "memory": {
+        "value": "682",
+        "unit": "GIGABYTE"
       }
     },
     {
-      "driver":  "HDD",
-      "memory":  {
-        "value":  "6",
-        "unit":  "TERABYTE"
+      "driver": "HDD",
+      "memory": {
+        "value": "3",
+        "unit": "TERABYTE"
       }
     }
   ],
-  "screen":  {
-    "size_inch":  15.77256,
-    "resolution":  {
-      "width":  3788,
-      "height":  2131
+  "screen": {
+    "size_inch": 16.298496,
+    "resolution": {
+      "width": 4709,
+      "height": 2649
     },
-    "panel":  "IPS",
-    "multitouch":  false
+    "panel": "IPS",
+    "multitouch": false
   },
-  "keyboard":  {
-    "layout":  "QWERTZ",
-    "backlit":  true
+  "keyboard": {
+    "layout": "AZERTY",
+    "backlit": true
   },
-  "weight_kg":  2.446932091796027,
-  "price_usd":  2071.644716914451,
-  "release_year":  2019,
-  "updated_at":  "2024-09-01T17:13:27.481871301Z"
+  "weight_kg": 2.1331388201191555,
+  "price_usd": 2555.6138642722617,
+  "release_year": 2019,
+  "updated_at": "2024-09-02T04:56:48.882771899Z"
 }
