@@ -22,6 +22,7 @@ const (
 	LaptopService_CreateLaptop_FullMethodName = "/pcbook.LaptopService/CreateLaptop"
 	LaptopService_SearchLaptop_FullMethodName = "/pcbook.LaptopService/SearchLaptop"
 	LaptopService_UploadImage_FullMethodName  = "/pcbook.LaptopService/UploadImage"
+	LaptopService_RateLaptop_FullMethodName   = "/pcbook.LaptopService/RateLaptop"
 )
 
 // LaptopServiceClient is the client API for LaptopService service.
@@ -31,6 +32,7 @@ type LaptopServiceClient interface {
 	CreateLaptop(ctx context.Context, in *CreateLaptopRequest, opts ...grpc.CallOption) (*CreateLaptopResponse, error)
 	SearchLaptop(ctx context.Context, in *SearchLaptopRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[SearchLaptopResponse], error)
 	UploadImage(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[UploadImageRequest, UploadImageResponse], error)
+	RateLaptop(ctx context.Context, opts ...grpc.CallOption) (grpc.BidiStreamingClient[RateLaptopRequest, RateLaptopResponse], error)
 }
 
 type laptopServiceClient struct {
@@ -83,6 +85,19 @@ func (c *laptopServiceClient) UploadImage(ctx context.Context, opts ...grpc.Call
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
 type LaptopService_UploadImageClient = grpc.ClientStreamingClient[UploadImageRequest, UploadImageResponse]
 
+func (c *laptopServiceClient) RateLaptop(ctx context.Context, opts ...grpc.CallOption) (grpc.BidiStreamingClient[RateLaptopRequest, RateLaptopResponse], error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	stream, err := c.cc.NewStream(ctx, &LaptopService_ServiceDesc.Streams[2], LaptopService_RateLaptop_FullMethodName, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &grpc.GenericClientStream[RateLaptopRequest, RateLaptopResponse]{ClientStream: stream}
+	return x, nil
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type LaptopService_RateLaptopClient = grpc.BidiStreamingClient[RateLaptopRequest, RateLaptopResponse]
+
 // LaptopServiceServer is the server API for LaptopService service.
 // All implementations should embed UnimplementedLaptopServiceServer
 // for forward compatibility.
@@ -90,6 +105,7 @@ type LaptopServiceServer interface {
 	CreateLaptop(context.Context, *CreateLaptopRequest) (*CreateLaptopResponse, error)
 	SearchLaptop(*SearchLaptopRequest, grpc.ServerStreamingServer[SearchLaptopResponse]) error
 	UploadImage(grpc.ClientStreamingServer[UploadImageRequest, UploadImageResponse]) error
+	RateLaptop(grpc.BidiStreamingServer[RateLaptopRequest, RateLaptopResponse]) error
 }
 
 // UnimplementedLaptopServiceServer should be embedded to have
@@ -107,6 +123,9 @@ func (UnimplementedLaptopServiceServer) SearchLaptop(*SearchLaptopRequest, grpc.
 }
 func (UnimplementedLaptopServiceServer) UploadImage(grpc.ClientStreamingServer[UploadImageRequest, UploadImageResponse]) error {
 	return status.Errorf(codes.Unimplemented, "method UploadImage not implemented")
+}
+func (UnimplementedLaptopServiceServer) RateLaptop(grpc.BidiStreamingServer[RateLaptopRequest, RateLaptopResponse]) error {
+	return status.Errorf(codes.Unimplemented, "method RateLaptop not implemented")
 }
 func (UnimplementedLaptopServiceServer) testEmbeddedByValue() {}
 
@@ -164,6 +183,13 @@ func _LaptopService_UploadImage_Handler(srv interface{}, stream grpc.ServerStrea
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
 type LaptopService_UploadImageServer = grpc.ClientStreamingServer[UploadImageRequest, UploadImageResponse]
 
+func _LaptopService_RateLaptop_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(LaptopServiceServer).RateLaptop(&grpc.GenericServerStream[RateLaptopRequest, RateLaptopResponse]{ServerStream: stream})
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type LaptopService_RateLaptopServer = grpc.BidiStreamingServer[RateLaptopRequest, RateLaptopResponse]
+
 // LaptopService_ServiceDesc is the grpc.ServiceDesc for LaptopService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -185,6 +211,12 @@ var LaptopService_ServiceDesc = grpc.ServiceDesc{
 		{
 			StreamName:    "UploadImage",
 			Handler:       _LaptopService_UploadImage_Handler,
+			ClientStreams: true,
+		},
+		{
+			StreamName:    "RateLaptop",
+			Handler:       _LaptopService_RateLaptop_Handler,
+			ServerStreams: true,
 			ClientStreams: true,
 		},
 	},
