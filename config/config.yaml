@@ -1,0 +1,31 @@
+aws:
+  region: us-west-2
+  bucket: your-s3-bucket-name
+  # Uncomment and set these if you want to use specific AWS credentials
+  # Otherwise, the tool will use the credentials from the environment or AWS credentials file
+  # access_key: YOUR_AWS_ACCESS_KEY
+  # secret_key: YOUR_AWS_SECRET_KEY
+
+  # Uncomment if you're using an S3-compatible storage service like MinIO
+  # endpoint: http://localhost:9000
+
+test:
+  file_size: 1048576 # 1MB in bytes
+  file_count: 100
+  concurrent_users: 10
+  duration: 5m
+  file_pattern: random # random, zeros, or repeating
+
+schedule:
+  enabled: false
+  cron: "0 * * * *" # Run hourly (at minute 0)
+
+logging:
+  level: info # debug, info, warn, error
+  file: logs/s3perftest.log
+
+api:
+  port: 8080
+  host: "0.0.0.0"
+  enable_cors: true
+  allow_origins: "*"

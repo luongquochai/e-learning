@@ -1,0 +1,24 @@
+{
+  "urls": [
+    {
+      "url": "https://example-bucket.s3.us-west-2.amazonaws.com/test/20240521-123456-000.dat?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIOSFODNN7EXAMPLE%2F20240521%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240521T123456Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+      "key": "test/20240521-123456-000.dat"
+    },
+    {
+      "url": "https://example-bucket.s3.us-west-2.amazonaws.com/test/20240521-123456-001.dat?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIOSFODNN7EXAMPLE%2F20240521%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240521T123456Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567891",
+      "key": "test/20240521-123456-001.dat"
+    },
+    {
+      "url": "https://example-bucket.s3.us-west-2.amazonaws.com/test/20240521-123456-002.dat?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIOSFODNN7EXAMPLE%2F20240521%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240521T123456Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567892",
+      "key": "test/20240521-123456-002.dat"
+    },
+    {
+      "url": "https://example-bucket.s3.us-west-2.amazonaws.com/test/20240521-123456-003.dat?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIOSFODNN7EXAMPLE%2F20240521%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240521T123456Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567893",
+      "key": "test/20240521-123456-003.dat"
+    },
+    {
+      "url": "https://example-bucket.s3.us-west-2.amazonaws.com/test/20240521-123456-004.dat?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIOSFODNN7EXAMPLE%2F20240521%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240521T123456Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567894",
+      "key": "test/20240521-123456-004.dat"
+    }
+  ]
+} 
